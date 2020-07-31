@@ -1,44 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cinema Reviews
 
-## Available Scripts
+### TypeScript Start guide
 
-In the project directory, you can run:
+- You can follow [this guide](https://www.sitepoint.com/react-with-typescript-best-practices/)
 
-### `yarn start`
+1. Create an app
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ```shell script
+    yarn create react-app cinema-reviews --template typescript 
+    ```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2. Modify `tsconfig.json`
 
-### `yarn test`
+    - Make it look like this [template](tsconfig.json)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Add ESLint/Prettier dependencies
 
-### `yarn build`
+    ```shell script
+    yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react --dev
+    yarn add prettier eslint-config-prettier eslint-plugin-prettier --dev
+    ```
+   
+4. Add ESLint/Prettier rules:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Create a `.eslintrc.js` at the project root, and make it look like [this one](.eslintrc.js)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+5. Set up ESLint with IntelliJ
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - Follow the `Allow your IDE's to use it` steps mentioned [here](https://github.com/lgc13/LucasCosta_portfolio/blob/master/wiki/cheat-sheet.md#eslint--prettier)
+    
+6. Add scripts to run lint, and prettier from the cmd line to the `package.json`
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```json
+    {
+        "scripts": {
+            "_otherScripts": "...",
+            "lint": "echo 'Running lint' && ./node_modules/.bin/eslint 'src/**/*.tsx'",
+            "lint-fix": "echo 'Prettifying!' && ./node_modules/.bin/eslint --fix 'src/**/*.tsx'"
+          }
+    }
+    ```
