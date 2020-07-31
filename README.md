@@ -36,8 +36,8 @@
     {
         "scripts": {
             "_otherScripts": "...",
-            "lint": "echo 'Running lint' && ./node_modules/.bin/eslint 'src/**/*.tsx'",
-            "lint-fix": "echo 'Prettifying!' && ./node_modules/.bin/eslint --fix 'src/**/*.tsx'"
+            "lint": "echo 'Running lint' && ./node_modules/.bin/eslint 'src/**/*.ts*'",
+            "lint-fix": "echo 'Prettifying!' && ./node_modules/.bin/eslint --fix 'src/**/*.ts*'"
           }
     }
     ```
