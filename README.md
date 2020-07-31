@@ -17,7 +17,8 @@
 3. Add ESLint/Prettier dependencies
 
     ```shell script
-    yarn add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react --dev
+    # I had an issue with the new eslint, so I removed it from the script
+    yarn add @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react --dev
     yarn add prettier eslint-config-prettier eslint-plugin-prettier --dev
     ```
    
